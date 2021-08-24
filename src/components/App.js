@@ -10,10 +10,10 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        <Route exact path='/'>
+        <Route exact path="/">
           <Books />
         </Route>
-        <Route path='/categories'>
+        <Route path="/categories">
           <Categories />
         </Route>
       </Switch>

@@ -8,14 +8,19 @@ function BookItem() {
         <div className="book-title">Book title</div>
         <div className="author-name">Author</div>
         <div>
-          <button>Comments</button>
-          <button>Remove</button>
-          <button>Edit</button>
+          <button type="button">Comments</button>
+          <button type="button">Remove</button>
+          <button type="button">Edit</button>
         </div>
       </div>
       <div className="col">
-        <span className="progress-chard"></span>
-        <span>64% <br /> completed</span>
+        <span className="progress-chard" />
+        <span>
+          64%
+          <br />
+          {' '}
+          completed
+        </span>
       </div>
       <div className="col">
         <span>CURRENT CHAPTER</span>

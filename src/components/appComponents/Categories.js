@@ -2,4 +2,4 @@ function Categories() {
   return null;
 }
 
-export default  Categories;
+export default Categories;
