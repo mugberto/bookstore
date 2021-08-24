@@ -1,12 +1,12 @@
 import React from 'react';
 
-function BookItem() {
+function BookItem(props) {
   return (
     <div className="book-item">
       <div className="col">
-        <div className="category-name">category</div>
-        <div className="book-title">Book title</div>
-        <div className="author-name">Author</div>
+        <div className="category-name">{props.book.name}</div>
+        <div className="book-title">{props.book.title}</div>
+        <div className="author-name">{props.book.author}</div>
         <div>
           <button type="button">Comments</button>
           <button type="button">Remove</button>

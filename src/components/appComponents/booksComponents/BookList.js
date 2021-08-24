@@ -1,13 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import BookItem from './bookListComponents/BookItem';
 
 function BookList() {
+  const books = useSelector(state => state.books);
   return (
     <div className="book-list">
-      <BookItem />
-      <BookItem />
-      <BookItem />
-      <BookItem />
+      { books.map(book => <BookItem book={book}/>) }
     </div>
   );
 }
