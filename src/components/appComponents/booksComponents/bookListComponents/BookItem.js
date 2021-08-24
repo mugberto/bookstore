@@ -1,12 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function BookItem(props) {
+  const {
+    cat, title, author, prog,
+  } = props;
   return (
     <div className="book-item">
       <div className="col">
-        <div className="category-name">{props.book.name}</div>
-        <div className="book-title">{props.book.title}</div>
-        <div className="author-name">{props.book.author}</div>
+        <div className="category-name">{cat}</div>
+        <div className="book-title">{title}</div>
+        <div className="author-name">{author}</div>
         <div>
           <button type="button">Comments</button>
           <button type="button">Remove</button>
@@ -14,9 +18,10 @@ function BookItem(props) {
         </div>
       </div>
       <div className="col">
-        <span className="progress-chard" />
+        <span className="progress-chart" />
         <span>
-          64%
+          {prog}
+          %
           <br />
           {' '}
           completed
@@ -30,5 +35,12 @@ function BookItem(props) {
     </div>
   );
 }
+
+BookItem.propTypes = {
+  cat: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  prog: PropTypes.number.isRequired,
+};
 
 export default BookItem;
