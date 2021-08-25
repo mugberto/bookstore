@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../../../redux/books/books';
 
 function AddBookForm() {
+  const dispatch = useDispatch();
   const [formState, setFormState] = useState({
     title: 'Book title',
     category: 'Category',
@@ -10,8 +13,9 @@ function AddBookForm() {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   }
 
-  function handleSubmit() {
-
+  function handleSubmit(e) {
+    dispatch(addBook(formState));
+    e.preventDefault();
   }
 
   return (
