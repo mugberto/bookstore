@@ -26,7 +26,7 @@ const defaultState = [
 ];
 
 export default function books(state = defaultState, action) {
-  switch(action.type) {
+  switch (action.type) {
     case ADD_BOOK:
       return state.concat({
         id: Date.now(),
@@ -36,7 +36,7 @@ export default function books(state = defaultState, action) {
         progress: 0,
       });
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload.id );
+      return state.filter((book) => book.id !== action.payload);
     default:
       return state;
   }
@@ -53,5 +53,5 @@ export function removeBook(payload) {
   return {
     type: REMOVE_BOOK,
     payload,
-  }
+  };
 }

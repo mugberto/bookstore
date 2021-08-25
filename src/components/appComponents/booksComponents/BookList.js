@@ -10,7 +10,16 @@ function BookList() {
         const {
           id, title, author, category, progress,
         } = book;
-        return <BookItem key={id} title={title} author={author} cat={category} prog={progress} />;
+        return (
+          <BookItem
+            key={id}
+            id={id}
+            title={title}
+            author={author}
+            cat={category}
+            prog={progress}
+          />
+        );
       }) }
     </div>
   );
