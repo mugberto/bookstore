@@ -1,10 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../../../../redux/books/books';
 
 function BookItem(props) {
   const {
-    cat, title, author, prog,
+    id, cat, title, author, prog,
   } = props;
+
+  const dispatch = useDispatch();
+
+  function handleClick(e) {
+    const payload = Number(e.target.dataset.bookid);
+    dispatch(removeBook(payload));
+  }
+
   return (
     <div className="book-item">
       <div className="col">
@@ -13,7 +23,7 @@ function BookItem(props) {
         <div className="author-name">{author}</div>
         <div>
           <button type="button">Comments</button>
-          <button type="button">Remove</button>
+          <button type="button" onClick={handleClick} data-bookid={id}>Remove</button>
           <button type="button">Edit</button>
         </div>
       </div>
@@ -37,6 +47,7 @@ function BookItem(props) {
 }
 
 BookItem.propTypes = {
+  id: PropTypes.number.isRequired,
   cat: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
