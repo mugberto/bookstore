@@ -9,7 +9,7 @@ export default function books(state = defaultState, action) {
       return state.concat({
         id: Date.now(),
         title: action.payload.title,
-        author: 'Suzanne Collins',
+        author: action.payload.author,
         category: action.payload.category,
         progress: 0,
       });
