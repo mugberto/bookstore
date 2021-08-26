@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBookAPI } from '../../../redux/books/books';
+import './AddBookForm.css';
 
 function AddBookForm() {
   const dispatch = useDispatch();
@@ -19,11 +20,11 @@ function AddBookForm() {
   }
 
   return (
-    <div>
-      <h2>Add NEW BOOK</h2>
+    <div className="form-container">
+      <h2 className="form-title">Add NEW BOOK</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="title" placeholder="Book title" value={formState.title} onChange={handleChange} />
-        <select name="category" value={formState.category} onChange={handleChange}>
+        <input type="text" name="title" placeholder="Book title" value={formState.title} onChange={handleChange} className="book-input" />
+        <select name="category" value={formState.category} onChange={handleChange} className="cat-input">
           <option value="" hidden>Category</option>
           <option value="Sci-Fi">Sci-Fi</option>
           <option value="Action">Action</option>
