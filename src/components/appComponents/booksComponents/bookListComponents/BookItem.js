@@ -16,6 +16,26 @@ function BookItem(props) {
     dispatch(removeBookAPI(payload));
   }
 
+  const progressStyle = {
+    position: 'relative',
+    backgroundImage: `conic-gradient(from 0deg, #307bbe, #379cf6 ${prog}%, #e8e8e8 ${prog}%, #e8e8e8)`,
+    display: 'inline-block',
+    width: '4.25rem',
+    height: '4.25rem',
+    borderRadius: '50%',
+  };
+
+  const innerWhite = {
+    position: 'absolute',
+    backgroundColor: '#fff',
+    width: '3.5rem',
+    height: '3.5rem',
+    borderRadius: '50%',
+    top: '50%',
+    left: '50%',
+    transform: 'translate( -50%, -50%)',
+  };
+
   return (
     <div className="book-item">
       <div className="col">
@@ -28,20 +48,22 @@ function BookItem(props) {
           <button type="button">Edit</button>
         </div>
       </div>
-      <div className="col">
-        <span className="progress-chart" />
+      <div className="row">
+        <span className="progress-chart" style={progressStyle}>
+          <div style={innerWhite} />
+        </span>
         <span>
-          {prog}
-          %
-          <br />
-          {' '}
-          completed
+          <div className="progress-percentage">
+            {prog}
+            %
+          </div>
+          <div className="completed">completed</div>
         </span>
       </div>
       <div className="col">
-        <span>CURRENT CHAPTER</span>
-        <span>CHAPTER 17</span>
-        <button type="button">UPDATE PROGRESS</button>
+        <span className="current-chapter">CURRENT CHAPTER</span>
+        <span className="current-lesson">CHAPTER 17</span>
+        <button type="button" className="update-pregress-btn">UPDATE PROGRESS</button>
       </div>
     </div>
   );
