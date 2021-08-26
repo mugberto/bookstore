@@ -1,5 +1,5 @@
 .app-header {
-  padding: 1.813rem 6.25rem ;
+  padding: 1.813rem 6.25rem;
 }
 
 .app-nav {
@@ -33,8 +33,12 @@
   font-style: normal;
   line-height: normal;
   letter-spacing: 1.9px;
-  color: #121212;
+  color: #a4a4a4;
   text-decoration: none;
+}
+
+.nav-link.active {
+  color: #121212;
 }
 
 .user-avator {
