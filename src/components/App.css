@@ -26,3 +26,7 @@
   margin: 0 0 2.313rem;
   border-bottom: solid 1px #e8e8e8;
 }
+
+button, a {
+  cursor: pointer;
+}
