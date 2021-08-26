@@ -8,7 +8,7 @@ function Header() {
   return (
     <header className="app-header">
       <nav className="app-nav">
-        <NavLink to="/" className="brand">Boostore CMS</NavLink>
+        <NavLink to="/" className="brand">Bookstore CMS</NavLink>
         <NavLink to="/" className="nav-link">BOOKS</NavLink>
         <NavLink to="/categories" className="nav-link">CATEGORIES</NavLink>
         <span className="user-avator"><FontAwesomeIcon icon={faUser} /></span>

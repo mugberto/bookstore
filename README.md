@@ -1,5 +1,9 @@
 # BookStore
-This is a React app that stores books and impliments add and remove functions using Redux store
+This is a React-redux app that stores books on a remote server via an API service and impliments add and remove functionalities.
+
+## Screenshot
+
+![BookStore CMS](./Bookstore-CMS.png)
 
 ## Built With
 
