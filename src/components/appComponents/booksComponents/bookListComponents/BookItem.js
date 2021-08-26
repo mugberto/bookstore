@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { removeBookAPI } from '../../../../redux/books/books';
+import './BookItem.css';
 
 function BookItem(props) {
   const {
@@ -20,8 +21,8 @@ function BookItem(props) {
       <div className="col">
         <div className="category-name">{cat}</div>
         <div className="book-title">{title}</div>
-        <div className="author-name">{author}</div>
-        <div>
+        <div className="book-author">{author}</div>
+        <div className="book-btns">
           <button type="button">Comments</button>
           <button type="button" onClick={handleClick} data-bookid={id}>Remove</button>
           <button type="button">Edit</button>
