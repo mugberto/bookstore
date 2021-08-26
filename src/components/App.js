@@ -11,17 +11,22 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => dispatch(loadBooksAPI()), []);
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route exact path="/">
-          <Books />
-        </Route>
-        <Route path="/categories">
-          <Categories />
-        </Route>
-      </Switch>
-    </Router>
+    <div className="bookstore">
+      <div className="panel-bg">
+        <Router>
+          <Header />
+          <div className="header-line" />
+          <Switch>
+            <Route exact path="/">
+              <Books />
+            </Route>
+            <Route path="/categories">
+              <Categories />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    </div>
   );
 }
 
