@@ -60,6 +60,7 @@ function BookItem(props) {
           <div className="completed">completed</div>
         </span>
       </div>
+      <div className="vline" />
       <div className="col">
         <span className="current-chapter">CURRENT CHAPTER</span>
         <span className="current-lesson">CHAPTER 17</span>

@@ -82,13 +82,6 @@
   border-left: none;
 }
 
-/* .progress-chart {
-  display: inline-block;
-  width: 4.25rem;
-  height: 4.25rem;
-  border-radius: 50%;
-} */
-
 .row {
   display: flex;
   flex-flow: row nowrap;
@@ -174,4 +167,11 @@
   letter-spacing: 0.5px;
   text-align: center;
   color: #fff;
+}
+
+.vline {
+  width: 0.125rem;
+  height: 4.375rem;
+  margin: 1.125rem 3.688rem 0 4.938rem;
+  border-left: solid 1px #e8e8e8;
 }
