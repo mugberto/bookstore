@@ -1,11 +1,14 @@
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
+const LOAD_BOOKS = 'bookstore/books/LOAD_BOOKS';
 const APP_ID = 'abMkyj5tLtp4TVRuI7vE';
 
 const defaultState = [];
 
 export default function books(state = defaultState, action) {
   switch (action.type) {
+    case LOAD_BOOKS:
+      return action.payload.map((bookObject) => ({ ...bookObject, author: 'Suzanne Collins', progress: 74 }));
     case ADD_BOOK:
       return state.concat({
         id: action.payload.item_id,
@@ -21,7 +24,14 @@ export default function books(state = defaultState, action) {
   }
 }
 
-export function addBook(payload) {
+function loadBooks(payload) {
+  return {
+    type: LOAD_BOOKS,
+    payload,
+  };
+}
+
+function addBook(payload) {
   return {
     type: ADD_BOOK,
     payload,
@@ -45,5 +55,18 @@ export function addBookAPI(payload) {
         'content-type': 'application/json',
       },
     }).then((response) => response.status === 201 && dispatch(addBook(bookDetails)));
+  };
+}
+
+export function loadBooksAPI() {
+  function arrayFormat(respObj) {
+    const values = Object.values(respObj).map((item) => item[0]);
+    return Object.keys(respObj).map((item, i) => ({ id: Number(item), ...values[i] }));
+  }
+
+  return async function loadBooksThunk(dispatch) {
+    fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${APP_ID}/books`)
+      .then((response) => response.json())
+      .then((json) => dispatch(loadBooks(arrayFormat(json))));
   };
 }
