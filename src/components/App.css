@@ -3,25 +3,27 @@
 }
 
 .bookstore {
-  width: 100rem;
-  height: 89.625rem;
-  padding: 9.313rem 3.75rem 7.688rem 6.25rem;
+  max-width: 100rem;
+  width: 100%;
+  min-height: 89.625rem;
   margin: 0 auto;
+  padding: 5rem 0;
   background-color: #f5f6fa;
 }
 
 .panel-bg {
-  width: 87.5rem;
-  height: 68.563rem;
-  margin: 0 2.5rem 4.063rem 0;
-  padding: 0 0 49.625rem;
+  box-sizing: border-box;
+  width: 87.5%;
+  min-height: 68.563rem;
+  margin: 0 auto 4.063rem;
+  padding: 0 0 3.125rem;
   border-radius: 4px;
   box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
   background-color: #fafafa;
 }
 
 .header-line {
-  width: 87.5rem;
+  width: 100%;
   height: 0.125rem;
   margin: 0 0 2.313rem;
   border-bottom: solid 1px #e8e8e8;

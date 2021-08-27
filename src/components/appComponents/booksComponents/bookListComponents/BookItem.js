@@ -38,7 +38,7 @@ function BookItem(props) {
 
   return (
     <div className="book-item">
-      <div className="col">
+      <div className="col book-details-col">
         <div className="category-name">{cat}</div>
         <div className="book-title">{title}</div>
         <div className="book-author">{author}</div>
@@ -61,7 +61,7 @@ function BookItem(props) {
         </span>
       </div>
       <div className="vline" />
-      <div className="col">
+      <div className="col update-col">
         <span className="current-chapter">CURRENT CHAPTER</span>
         <span className="current-lesson">CHAPTER 17</span>
         <button type="button" className="update-pregress-btn">UPDATE PROGRESS</button>

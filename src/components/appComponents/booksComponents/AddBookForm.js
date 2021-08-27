@@ -22,7 +22,7 @@ function AddBookForm() {
   return (
     <div className="form-container">
       <h2 className="form-title">Add NEW BOOK</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="inner-form-container">
         <input type="text" name="title" placeholder="Book title" value={formState.title} onChange={handleChange} className="book-input" />
         <select name="category" value={formState.category} onChange={handleChange} className="cat-input">
           <option value="" hidden>Category</option>

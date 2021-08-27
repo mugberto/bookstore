@@ -1,10 +1,11 @@
 .app-header {
-  padding: 1.813rem 6.25rem;
+  padding: 1.813rem 0;
 }
 
 .app-nav {
   position: relative;
-  width: 75rem;
+  width: 85.714%;
+  margin: 0 auto;
 }
 
 .brand {
