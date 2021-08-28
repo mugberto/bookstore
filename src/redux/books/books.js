@@ -8,14 +8,14 @@ const defaultState = [];
 export default function books(state = defaultState, action) {
   switch (action.type) {
     case LOAD_BOOKS:
-      return action.payload.map((bookObject) => ({ ...bookObject, author: 'Suzanne Collins', progress: 74 }));
+      return action.payload.map((bookObject) => ({ ...bookObject, author: 'Suzanne Collins', progress: 64 }));
     case ADD_BOOK:
       return state.concat({
         id: action.payload.item_id,
         title: action.payload.title,
         author: 'Suzanne Collins',
         category: action.payload.category,
-        progress: 74,
+        progress: 64,
       });
     case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.payload);
